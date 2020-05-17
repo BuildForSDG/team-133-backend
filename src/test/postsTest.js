@@ -32,16 +32,16 @@ describe('CRUD operations',()=>{
        "article":"There are many types of apples..",
        "imageUrl":"http:apples.com",
        "author":"purity",
-       "category":"food",
-       "dateCreated":"2020-01-09"
+       "category":"food"
+      
     },
     {   
         "title":"Cows",
        "article":"There are many types of cows..",
        "imageUrl":"http:cows.com",
        "author":"jj",
-       "category":"livestock",
-       "dateCreated":"2020-01-10"
+       "category":"livestock"
+       
     }];
     it('Should add posts in db',(done)=>{
         for(post in posts){
@@ -79,8 +79,8 @@ it('Should get a particular post',(done)=>{
         "article":"There are many types of cows..",
         "imageUrl":"http:cows.com",
         "author":"jj",
-        "category":"livestock",
-        "dateCreated":"2020-01-10"
+        "category":"livestock"
+        
     });
     post.save((err,post)=>{
         chai.request(server)
@@ -94,7 +94,7 @@ it('Should get a particular post',(done)=>{
                   res.body.should.have.property('imageUrl');
                   res.body.should.have.property('author');
                   res.body.should.have.property('category');
-                  res.body.should.have.property('dateCreated');
+               
                   res.body.should.have.property('_id').eql(post.id);
               
             });
@@ -109,8 +109,8 @@ it('Should get a particular post',(done)=>{
         "article":"There are many types of cows..",
         "imageUrl":"http:cows.com",
         "author":"jj",
-        "category":"livestock",
-        "dateCreated":"2020-01-10"
+        "category":"livestock"
+        
     });
     post.save((err, post) => {
         chai.request(server)
@@ -119,8 +119,8 @@ it('Should get a particular post',(done)=>{
         "article":"There are many types of dairy cows and many farmers..",
         "imageUrl":"http:cows.com",
         "author":"jj",
-        "category":"livestock",
-        "dateCreated":"2020-01-10"})
+        "category":"livestock"
+        })
         .end((err, res) => {
               res.should.have.status(201);
               res.body.should.be.a('object');
@@ -152,7 +152,7 @@ it('should delete a particular post',(done)=>{
         "imageUrl":"http:cows.com",
         "author":"jj",
         "category":"livestock",
-        "dateCreated":"2020-01-10"
+        
     });
     post.save((err, post) => {
         chai.request(server)
