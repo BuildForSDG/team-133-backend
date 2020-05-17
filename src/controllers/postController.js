@@ -9,7 +9,7 @@ exports.createPost= (req,res, next)=>{
         imageUrl: req.body.imageUrl,
         author: req.body.author,
         category: req.body.category,
-        dateCreated:req.body.dateCreated
+        
     });
     post.save().then(
         () => {
@@ -66,7 +66,7 @@ exports.updatePost=(req,res,next)=>{
         imageUrl: req.body.imageUrl,
         author: req.body.author,
         category: req.body.category,
-        dateCreated:req.body.dateCreated
+        
     });
     Post.updateOne({_id: req.params.id}, post).then(
         () => {
