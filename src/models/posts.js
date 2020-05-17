@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const mongoose = require('mongoose');
 
 const postSchema = mongoose.Schema({
@@ -7,11 +8,11 @@ const postSchema = mongoose.Schema({
   author: { type: String, required: true },
   category: { type: String, required: true },
   comments: [{
-type:mongoose.Schema.Types.ObjectId,
-ref:'Comment',
-required:true
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Comment',
+    required: true
   }],
-  dateCreated: { type:Date, required: true}
+  dateCreated: { type: Date, required: true}
 });
 
 module.exports = mongoose.model('Post', postSchema);
