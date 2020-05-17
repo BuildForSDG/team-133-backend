@@ -9,11 +9,9 @@
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "directories": {
-    "test": "src/tests/*.js"
-  },
+  
   "scripts": {
-    "test": "mocha test --exit",
+    "test": "mocha src/test/postsTest.js --exit",
     "lint": "eslint \"src/**/*.js\"",
     "start": "node ./src/server.js"
   },

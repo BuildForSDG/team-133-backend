@@ -1,7 +1,7 @@
 /*eslint-disable*/
 
 //during the test the env var is set to test
-process.env.NODE_ENV='test';
+//process.env.NODE_ENV='test';
 let db= require('../models/posts');
 let server= require('../server');
 //require the dev dependencies
