@@ -12,7 +12,9 @@ const postSchema = mongoose.Schema({
     ref: 'Comment',
     required: true
   }],
-  dateCreated: { type: Date, required: true}
+  
+},{
+  timestamps:true
 });
 
 module.exports = mongoose.model('Post', postSchema);
