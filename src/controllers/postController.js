@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const Post= require('../models/posts');
 
 exports.createPost= (req,res, next)=>{
@@ -59,7 +60,7 @@ exports.getOnePost=(req,res,next)=>{
 };
 exports.updatePost=(req,res,next)=>{
     const post= new Post({
-        
+         _id:req.params.id,
         title: req.body.title,
         article: req.body.article,
         imageUrl: req.body.imageUrl,
@@ -72,6 +73,9 @@ exports.updatePost=(req,res,next)=>{
           res.status(201).json({
             message: 'Post updated successfully!'
           });
+        }, {
+          new:true,
+          runValidators:true
         }
       ).catch(
         (error) => {
