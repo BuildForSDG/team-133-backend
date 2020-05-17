@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const Post= require('../models/posts');
 const Comment= require('../models/comments');
 
@@ -20,29 +21,51 @@ exports.createComment= async(req,res)=>{
 }
 }
 
-exports.getComments= async (res,req)=>{
+exports.getComments= async (req,res)=>{
     try{
-    const post= await Post.findOne({_id:req.params.id}).populate("comments");
+    const post= await Post.findOne({_id:req.params.id}).populate( "comments");
     res.send(post);
 } catch (err) {
     console.error(err.message);
 }
 };
 
-exports.updateComments= async(res,req)=>{
-    try{
-    const comment= await Comment.findOneAndUpdate({_id: req.params.commentId}, req.body,
-        { new: true, runValidators:true});
-        res.send(comment);
-    } catch (err) {
-        console.error(err.message);
-    }
-}
-exports.deleteComments= async(res,req)=>{
-    try{
-    await Comment.findOneAndRemove(req.params.commentId);
-    res.send({message:"Comment deleted successfully."});
-} catch (err) {
-    console.error(err.message);
-}
+
+exports.updateComments=(req,res,next)=>{
+    const comment= new Comment({
+         _id:req.params.commentId,
+        text:req.body.text
+        
+    });
+    Comment.updateOne({_id: req.params.commentId}, comment).then(
+        () => {
+          res.status(201).json({
+            message: 'Comment updated successfully!'
+          });
+        }, {
+          new:true,
+          runValidators:true
+        }
+      ).catch(
+        (error) => {
+          res.status(400).json({
+            error: error
+          });
+        }
+      );
+};
+exports.deleteComments= (req,res,next)=>{
+    Comment.deleteOne({_id: req.params.commentId}).then(
+        () => {
+          res.status(200).json({
+            message: 'Deleted the comment!'
+          });
+        }
+      ).catch(
+        (error) => {
+          res.status(400).json({
+            error: error
+          });
+        }
+      );
 }
