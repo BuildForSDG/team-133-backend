@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const http = require('http');
 const app = require('./app');
 
@@ -45,3 +46,5 @@ server.on('listening', () => {
 });
 
 server.listen(port);
+
+module.exports=server;
