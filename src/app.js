@@ -1,16 +1,13 @@
-const express= require('express');
+/*eslint-disable*/
+const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const cors= require('cors');
+const cors = require('cors');
 
-const postRoute= require('./routes/postRoute');
+const postRoute = require('./routes/postRoute');
 
-const app= express();
-
-
-
-
-//connecting to mongoose cluster
+const app = express();
+// connecting to mongoose cluster
 mongoose.connect('mongodb+srv://puritys:admin@cluster0-tyaxn.mongodb.net/test?retryWrites=true&w=majority',
 { useNewUrlParser: true,
   useUnifiedTopology: true })

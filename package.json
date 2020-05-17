@@ -10,14 +10,12 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "directories": {
-    "test": "__tests__"
+    "test": "src/tests/*.js"
   },
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cover": "jest --coverage",
+    "test": "mocha test --exit",
     "lint": "eslint \"src/**/*.js\"",
-    "start": "node ./src/index.js"
+    "start": "node ./src/server.js"
   },
   "author": {
     "name": "Build For SDG",
@@ -34,8 +32,11 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.7.5"
+    "http": "0.0.1-security",
+    "mongoose": "^5.9.14",
+    "nodemon": "^2.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
