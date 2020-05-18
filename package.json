@@ -11,7 +11,7 @@
   "types": "dist/index.d.ts",
   
   "scripts": {
-    "test": "mocha src/test/postsTest.js --exit",
+    "test": "mocha src/test/postsTest.js src/test/commentsTest.js --exit",
     "lint": "eslint \"src/**/*.js\"",
     "start": "node ./src/server.js"
   },
