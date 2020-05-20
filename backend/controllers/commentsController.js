@@ -1,7 +1,7 @@
 /*eslint-disable*/
 let mongoose= require('mongoose');
 const Post= require('../models/posts');
-const Comment= require('../models/comments');
+const Comment= require('../models/comments');z
 
 exports.createComment= async(req,res)=>{
     try{
