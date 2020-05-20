@@ -1,4 +1,5 @@
 /*eslint-disable*/
+let mongoose= require('mongoose');
 const Post= require('../models/posts');
 const Comment= require('../models/comments');
 
