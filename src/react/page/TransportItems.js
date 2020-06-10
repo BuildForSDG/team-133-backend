@@ -37,7 +37,7 @@ class TransportItems extends Component {
     if (!_.isEmpty(items)){
       return (
         <div id="content" className="content">
-          <h1> Transport Listing Page</h1>
+           <header className="masthead"> <h1> Transport Listing Page</h1>
           <div className="item-list">
             {
               items.map((item, index) => {
@@ -65,7 +65,8 @@ class TransportItems extends Component {
                 )
               })
             }
-          </div>
+          </div></header>
+         
         </div>
       )
     } else

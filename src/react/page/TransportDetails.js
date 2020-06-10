@@ -84,7 +84,7 @@ class TransportDetails extends Component {
 
       return (
         <div>
-          {
+           <header className="masthead">  {
             relatedView.data.map((item, index) => {
 
               return (
@@ -99,7 +99,8 @@ class TransportDetails extends Component {
               )
             })
 
-          }
+          }</header>
+        
 
         </div>
       )

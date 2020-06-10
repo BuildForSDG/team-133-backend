@@ -40,7 +40,7 @@ class User extends Component {
 
         return (
             <div id="content" className="content">
-                <div className="user">
+                 <header className="masthead"> <div className="user">
                     <div>
                         {this.renderBtn('Login')}
                         {this.renderBtn('Register')}
@@ -48,7 +48,8 @@ class User extends Component {
                     </div>
                     <h1> USER PAGE. </h1>
                     {this.renderForm()}
-                </div>
+                </div></header>
+               
             </div>
         );
     }

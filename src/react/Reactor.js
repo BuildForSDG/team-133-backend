@@ -14,7 +14,8 @@ import User from "./page/User";
 import About from "./page/About";
 import AddItem from "./page/AddItem";
 import Forum from "./page/Forum";
-
+import Footer from "./component/common/footer"
+import Tv from "./page/farmersTv"
 class Reactor extends Component {
 
   homePage = () => {
@@ -23,17 +24,16 @@ class Reactor extends Component {
 
   render() {
     return (
-      <div id="home" className="home">
-        <header id="header" className="header">
-          <div id="app_name" >
-            <Link to='/'>AppName</Link>
-          </div>
+      <div id="home" className="body">
+        
+          
           <NavBar/>
-        </header>
+        
         <Switch>
+        <Route path="/tv" component={Tv}/>
           <Route path="/transport/:id" component={TransportDetails}/>
           <Route path="/transport-list/:filter?/:filtertwo?" component={TransportItems}/>
-          <Route path="/api" component={Api}/>
+          <Route path="/transport-api" component={Api}/>
           <Route path="/about" component={About}/>
           <Route path="/forum" component={Forum}/>
           <Route path="/add-item" component={AddItem}/>
@@ -42,6 +42,7 @@ class Reactor extends Component {
           <Route path="/" component={Home}/>
           <Redirect to="/not-found" />
         </Switch>
+        <Footer/>
       </div>
     );
   }
