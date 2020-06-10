@@ -5,9 +5,9 @@ class AddItem extends Component {
     render() {
         return (
             <div id="content" className="content">
-                <h1> Add item page </h1>
+                 <header className="masthead"><h1> Add item page </h1>
                 <TransportForm
-                />
+                /></header>
             </div>
         );
     }

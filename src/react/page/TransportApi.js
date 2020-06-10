@@ -45,7 +45,7 @@ class Home extends Component {
     };
     return (
       <div id="content" className="content">
-        <h1> TEAM #133...............</h1>
+        <header className="masthead"><h1>TEAM #133...............</h1>
         <section className="feature-description">
           <div className="item">
             <h3> Transport Object (item). </h3>
@@ -56,7 +56,7 @@ class Home extends Component {
             <h4>NB:: /5eb3079df907b8323cc22d7c == /:id as url param</h4>
             <JSONPretty json={items} theme={agate} />
           </div>
-        </section>
+        </section></header> 
       </div>
     );
   }
