@@ -62,11 +62,11 @@ const docs = {
 },
      create: {
          api:'/api/posts/',
-         description:' uses POST to post an article'
+         description:' uses POST to create an article'
      },
      update: {
         api:'/api/posts/:id',
-        description:' uses UPDATE to modify an article'
+        description:' uses PUT to modify an article'
     },
     delete: {
         api:'/api/posts/:id',
@@ -86,7 +86,7 @@ create: {
 },
 update: {
   api:'/api/posts/comments/:commentId',
-  description:' uses UPDATE to modify a comment'
+  description:' uses PUT to modify a comment'
 },
 delete: {
   api:'/api/posts/comments/:commentId',
@@ -121,7 +121,7 @@ delete: {
    },
    update: {
       api:'/api/produce/:id',
-      description:' uses UPDATE to modify a product'
+      description:' uses PUT to modify a product'
   },
   delete: {
       api:'/api/produce/:id',
