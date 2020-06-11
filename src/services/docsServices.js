@@ -2,7 +2,7 @@
 // with the item an endpoint returns/processes and endpoint with descriptions of each
 
 
-// endpoints included: auth, file, forum, transport
+// endpoints included: auth, file, forum,produce, transport
 const docs = {
 
     // 1. auth api
@@ -32,7 +32,7 @@ const docs = {
         <input type="file" name="imageUrl" single />
     </div>
     <input type="text" name="title"/>
-     <input type="text" name="author"/>
+     <input type="text" name="author"/> ..etc..
     <div>
         <input type="submit" value="Upload" />
     </div>
