@@ -109,7 +109,7 @@ delete: {
         },
         produceList : {
             api: '/api/produce/',
-            description:' uses GET to show all the produce'
+            description:' uses GET to show  all the produce'
    },
    produce : {
       api: '/api/produce/:id',
