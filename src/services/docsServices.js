@@ -24,11 +24,109 @@ const docs = {
 
     // 2. File and image api
     file: {
-
+   // this is a multi part form data eg 
+   /*
+   <form method="POST" action="/api/posts/" enctype="multipart/form-data">
+    <div>
+        <label>Select  image:</label>
+        <input type="file" name="imageUrl" single />
+    </div>
+    <input type="text" name="title"/>
+     <input type="text" name="author"/>
+    <div>
+        <input type="submit" value="Upload" />
+    </div>
+</form> */
     },
 
     // 3. Forum api
     forum: {
+     object: {
+         title:'title of article',
+         article: 'article itself',
+         imageUrl:'image going with the article',
+         author:'the writer of article',
+         category:'what category it belongs to',
+         comments:[{
+             text:'the comment itself'
+         }]
+     },
+     //posts/articles api
+     postsList : {
+              api: '/api/posts/',
+              description:' uses GET to show all the articles'
+     },
+     post : {
+        api: '/api/posts/:id',
+        description:' uses GET to show a single article'
+},
+     create: {
+         api:'/api/posts/',
+         description:' uses POST to post an article'
+     },
+     update: {
+        api:'/api/posts/:id',
+        description:' uses UPDATE to modify an article'
+    },
+    delete: {
+        api:'/api/posts/:id',
+        description:' uses DELETE to delete an article'
+    },
+
+
+     //comments api
+     commentsList : {
+        api: '/api/posts/:id/comment',
+        description:' uses GET to show all the comments under a particular article'
+},
+
+create: {
+   api:'/api/posts/:id/comment',
+   description:' uses POST to post a comment to an article'
+},
+update: {
+  api:'/api/posts/comments/:commentId',
+  description:' uses UPDATE to modify a comment'
+},
+delete: {
+  api:'/api/posts/comments/:commentId',
+  description:' uses DELETE to delete a comment'
+}
+
+    },
+    //produce api
+    produce: {
+       
+        object:{
+            owner:'the owner of the product',
+            product:'what the farmer is selling',
+            description:'description of the product',
+            weight:'weight of product ',
+            unitPrice:'the cost for a single unit of the product',
+            imageUrl:'the image of the product',
+            location:'the location of the product/farmer'
+
+        },
+        produceList : {
+            api: '/api/produce/',
+            description:' uses GET to show all the produce'
+   },
+   produce : {
+      api: '/api/produce/:id',
+      description:' uses GET to show a single product'
+},
+   create: {
+       api:'/api/produce/',
+       description:' uses POST to post a product'
+   },
+   update: {
+      api:'/api/produce/:id',
+      description:' uses UPDATE to modify a product'
+  },
+  delete: {
+      api:'/api/produce/:id',
+      description:' uses DELETE to delete a product'
+  },
 
     },
 
